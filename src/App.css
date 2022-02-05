@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 1rem 0 0 0 ;
+    box-sizing: border-box;
+    background-color: rgb(44, 44, 44);
+    color: #f2f2f2;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+input {
+    padding: .6rem;
+    margin-left: 1rem;
+    border: none;
+    background: #f2f2f2;
+    border-radius: .2rem;
+    color: #1e1e1e;
+}
+
+button {
+    width: 6rem;
+    padding: 1rem;
+    border-radius: .2rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.deposit{
+    background-color: #50fa7b;
+    color: #1e1e1e;
+    font-weight: 600;
+}
+
+.whithdraw{
+    background-color: #ff5555;
+    font-weight: 600;
+}
+
+.form {
+    margin-top: 5rem;
+}
+
+.confirm {
+    background-color: #246ac0;
+    width: 10rem;
+}
