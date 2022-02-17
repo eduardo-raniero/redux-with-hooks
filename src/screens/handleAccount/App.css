@@ -2,29 +2,45 @@
     padding: 0;
     margin: 1rem 0 0 0 ;
     box-sizing: border-box;
-    background-color: rgb(44, 44, 44);
-    color: #f2f2f2;
+    background-color: #f2f2f2;
+    color: #1e1e1e;
     font-family: sans-serif;
     text-align: center;
+}
+
+h1 {
+    color: #1e1e1e;
+}
+
+form{
+    max-width: 15rem;
+    margin: 0 auto;
 }
 
 input {
     padding: .6rem;
     margin-left: 1rem;
-    border: none;
+    border: 1px solid #246ac0;
     background: #f2f2f2;
     border-radius: .2rem;
     color: #1e1e1e;
+    width: 100%;
 }
 
 button {
     width: 6rem;
     padding: 1rem;
-    border-radius: .2rem;
+    border-radius: .25rem;
     outline: none;
     border: none;
     cursor: pointer;
     margin-right: 1rem;
+    font-weight: bold;
+}
+
+button:disabled{
+    cursor: not-allowed;
+    opacity: .5;
 }
 
 .deposit{
@@ -45,4 +61,5 @@ button {
 .confirm {
     background-color: #246ac0;
     width: 10rem;
+    color: #f2f2f2;
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+
+//ROUTES
+import RouterFile from './routes';
 
 import { Provider } from "react-redux";
 import { store } from "./state/store";
@@ -8,7 +10,7 @@ import { store } from "./state/store";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <RouterFile />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
