@@ -1,0 +1,51 @@
+.aligner{
+    margin: 0 auto;
+    max-width: 1000px;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 25rem;
+    
+    h1{
+        margin: 6rem 0 2rem 0;
+    }
+    
+    .formBox{
+        background: #fff;
+        padding: 4.5rem;
+        border-radius: .1rem;
+        -webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.03); 
+        box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.03);
+
+        a{
+            width: 16rem;
+            margin: 0;
+            color: #fff;
+            background: #DE5246;
+            font-size: 1.125rem;
+            padding: 1rem 2rem;
+            transition: .2s;
+            cursor: pointer;
+            border-radius: .2rem;
+            text-decoration: none;
+
+            &:hover{
+                opacity: .9;
+            }
+
+            &:active{
+                filter: brightness(.8);
+            }
+
+            svg{
+                margin-right: .5rem;
+            }
+            path{
+                color: #fff;
+            }
+        }
+    }
+}
