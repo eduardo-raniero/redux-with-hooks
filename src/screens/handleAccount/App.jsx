@@ -3,13 +3,16 @@ import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../state/index'
 
+//Custom Alerts
+import swal from 'sweetalert';
+
 //CSS
 import './App.css';
 
 function App() {
   const [depositForm, setDepositForm] = useState(false);
   const [whithdrawForm, setWhithdrawForm] = useState(false);
-  const [disabledOperations, setDisabledOperations] = useState(false)
+  const [disabledOperations, setDisabledOperations] = useState(false);
   
   const account = useSelector((state) => state.account);
   const dispatch = useDispatch();
@@ -28,12 +31,13 @@ function App() {
     if(amount === 0){
       e.preventDefault()
       setDepositForm(true)
-      alert("Insira um valor!")
+      swal("Ops!", "Insira algum valor!", "error")
     } else {
       depositMoney(amount)
       e.preventDefault()
       setDepositForm(false)
       setDisabledOperations(false)
+      swal("Pronto!","Operação bem sucedida!", "success")
 
     }
   }
@@ -42,12 +46,13 @@ function App() {
   //Whithdraw Logic
   const handleWhithdraw = () =>{
     if(account === 0 ){
-      alert("Saldo zerado, você não pode realizar saques!")
+      swal("Erro","Saldo zerado, você não pode realizar saques!", "error")
+      setDisabledOperations(false)
     } else {
       setWhithdrawForm(true)
+      
     }
     setDepositForm(false)
-    setDisabledOperations(true)
   }
 
   const whithdrawAmount = (e) => {
@@ -55,18 +60,20 @@ function App() {
     if(amount === 0){
       e.preventDefault()
       setWhithdrawForm(true)
-      alert("Insira um valor!")
+      swal("Ops!", "Insira algum valor!", "error")
 
     } else if(amount > account){
       e.preventDefault()
       setWhithdrawForm(true)
-      alert(`Valor desejado maior que seu saldo. Saque um valor igual ou inferior a ${account}`)
+      swal("Operação cancelada", `Valor desejado maior que seu saldo. Saque um valor igual ou inferior a ${account}`, "error")
 
     } else {
       whithdrawMoney(amount)
       e.preventDefault()
       setWhithdrawForm(false)
       setDisabledOperations(false)
+      swal("Pronto!","Operação bem sucedida!", "success")
+
 
     }
 
@@ -75,7 +82,8 @@ function App() {
   
 
   return (
-    <div>
+    <>
+      <div>
       <h1>{account}</h1>
       <button className='deposit' onClick={handleDeposit} disabled={disabledOperations}> Depositar </button>
       <button className='whithdraw' onClick={handleWhithdraw} disabled={disabledOperations}> Sacar </button>
@@ -103,6 +111,7 @@ function App() {
         : null
       }
     </div>
+    </>
   );
 }
 

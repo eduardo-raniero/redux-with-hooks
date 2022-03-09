@@ -6,6 +6,7 @@ import { BsGoogle } from 'react-icons/bs';
 
 export default function HomeLogin(){
     return(
+        <>
         <div className="aligner">
             <div className="container">
                 <h1>MoneyMonkey</h1>
@@ -16,5 +17,6 @@ export default function HomeLogin(){
                 <small>Powered by: <a href="https://github.com/eduardo-raniero">E.R.S</a> </small>
             </div>
         </div>
+        </>
     )
 }
